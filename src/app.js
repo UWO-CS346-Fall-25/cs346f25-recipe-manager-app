@@ -73,6 +73,15 @@ app.use((req, res, next) => {
 // const indexRouter = require('./routes/index');
 // app.use('/', indexRouter);
 
+
+// Default Route
+app.get('/', csrfProtection, (req, res) => {
+  res.render('home-page', {
+    title: 'Home',
+    csrfToken: req.csrfToken(),
+  });
+});
+
 // Home Route
 app.get('/home-page', csrfProtection, (req, res) => {
   res.render('home-page', {
