@@ -1,3 +1,19 @@
+# Notes on current pages / features:
+
+-home-page.ejs     shows what entries to add a recipe may look like
+
+-about.ejs         QnA section that addresses some questions and explains the future features
+
+-shopping-list.ejs    Shows the checklist layout for a sample shopping list
+
+-my-recipes.ejs     To be implemented after getting further into the project
+
+Other files in views directory are leftovers from the template and can be ignored.
+
+
+-------------------------------------------------------------------------------------------
+
+
 # CS346 Semester Project Template
 
 A teaching template for building secure web applications with Node.js, Express, EJS, and PostgreSQL.
