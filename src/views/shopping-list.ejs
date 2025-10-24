@@ -28,34 +28,41 @@
                     <!-- This is a sample to show what a shopping list would look like -->
                     <section id="shopping-list">
                         <h2>Shopping List</h2>
-                        <ul>
-                            <li>
+                        <ul id="shopping-list-items">
+                            <li class="ingredient">
                                 <input type="checkbox">
                                 1 Clove of Garlic
                             </li>
-                            <li>
+                            <li class="ingredient">
                                 <input type="checkbox">
                                 4 Packets of Baker's Yeast
                             </li>
-                            <li>
+                            <li class="ingredient">
                                 <input type="checkbox">
                                 1 Bag of All-Purpose Flour
                             </li>
-                            <li>
+                            <li class="ingredient">
                                 <input type="checkbox">
                                 1 Carton of Large Eggs
                             </li>
-                            <li>
+                            <li class="ingredient">
                                 <input type="checkbox">
                                 1 Box of Baking Soda
                             </li>
-                            <li>
+                            <li class="ingredient">
                                 <input type="checkbox">
                                 1 Gallon of Milk
                             </li>
-                            <li>
+                            <li class="ingredient">
                                 <input type="checkbox">
                                 1 Can of Evaporate Milk
+                            </li>
+                            <li id="new-ingredient-container">
+                                <textarea id="new-ingredient"></textarea>
+                                <button id="add-ingredient-button">Add</button>
+                            </li>
+                            <li>
+                                <button id="clear-list-button">Clear?</button>
                             </li>
                         </ul>
                     </section>
@@ -70,5 +77,6 @@
                 </p>
             </footer>
         </div>
+        <script src="./js/shoppingListScript.js" defer></script>
     </body>
 </html>

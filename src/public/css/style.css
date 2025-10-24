@@ -167,6 +167,20 @@ main {
   padding: 10px 0;
 }
 
+#new-ingredient {
+  height: 20px;
+  width: 100%;
+}
+
+#add-ingredient-button, #clear-list-button {
+  width: 50px;
+  height: 30px;
+}
+
+#clear-list-button:hover {
+  background-color: red;
+  color: yellow;
+}
 
 /* Footer */
 footer {
