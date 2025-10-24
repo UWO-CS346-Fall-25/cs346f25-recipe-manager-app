@@ -6,7 +6,6 @@
 
 let shoppingList = document.getElementById("shopping-list-items");
 let addButton = document.getElementById("add-ingredient-button");
-let ingredients = shoppingList.children();
 
 //
 // EH for Add ingredient button being clicked
