@@ -135,10 +135,21 @@ main {
   margin: 20px 0;
 }
 
-.prompt-input input {
-  width: 20%;
+.prompt-input textarea {
+  min-width: 20%;
   padding: 10px 0;
   text-indent: 5px;
+}
+
+#create-recipe-button {
+  width: 100px;
+  height: 50px;
+  padding: 0 10px;
+}
+
+#create-recipe-button:hover {
+  background-color: limegreen;
+  color: white;
 }
 
 #shopping-list {
