@@ -5,7 +5,7 @@
 document.getElementById("create-recipe-button").addEventListener("click", function(){
 
     // Make it so text areas do not clear when invalid values entered.
-    preventDefault();
+    event.preventDefault();
 
     let recipeBox = document.getElementById("recipe-name-input");
     let ingredientsBox = document.getElementById("ingredients-input");
