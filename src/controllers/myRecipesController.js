@@ -1,3 +1,6 @@
+// 
+// This file serves as a controller for my-recipes
+// 
 exports.getMyRecipes = async (req, res, next) => {
   try {
     // Fetch any data needed for the home page

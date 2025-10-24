@@ -1,3 +1,6 @@
+// 
+// This file serves as a controller for about
+// 
 exports.getAbout = async (req, res, next) => {
   try {
     // Fetch any data needed for the home page
