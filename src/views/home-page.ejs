@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Re-Easy - Home</title>
+        <title>Re-Easy - <%= title %></title>
         <link rel="stylesheet" href="/css/style.css">
     </head>
     <body>
@@ -27,20 +27,22 @@
                     <h2>Try adding a recipe!</h2>
                     <form>
                         <div class="prompt-input">
-                            <p class="input-label">Recipe Name</p>
-                            <input type="text">
+                            <p class="input-label">Recipe Name:</p>
+                            <textarea id="recipe-name-input"></textarea>
                         </div>
 
                         <!-- The input method for ingredients may be subject to change -->
                         <div class="prompt-input">
-                            <p class="input-label">Ingredients</p>
-                            <input id="ingredients-input" type="text">
+                            <p class="input-label">Ingredients:</p>
+                            <textarea id="ingredients-input"></textarea>
                         </div>
 
                         <div class="prompt-input">
-                            <p class="input-label">Extra Notes</p>
-                            <input id="notes-input" type="text">
+                            <p class="input-label">Extra Notes:</p>
+                            <textarea id="notes-input"></textarea>
                         </div>
+
+                        <button id="create-recipe-button">Create Recipe!</button>
                     </form>
                 </section>
             </main>
@@ -51,5 +53,6 @@
                 </p>
             </footer>
         </div>
+        <script src="/js/homeScript.js" defer></script>
     </body>
 </html>
