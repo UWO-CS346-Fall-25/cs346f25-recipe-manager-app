@@ -73,46 +73,62 @@ app.use((req, res, next) => {
 // const indexRouter = require('./routes/index');
 // app.use('/', indexRouter);
 
+// Home page Route
+const homeRouter = require('./routes/home');
+app.use('/', homeRouter);
 
-// Default Route
-app.get('/', csrfProtection, (req, res) => {
-  res.render('home-page', {
-    title: 'Home',
-    csrfToken: req.csrfToken(),
-  });
-});
+// About page Route
+const aboutRouter = require('./routes/about');
+app.use('/about', aboutRouter);
 
-// Home Route
-app.get('/home-page', csrfProtection, (req, res) => {
-  res.render('home-page', {
-    title: 'Home',
-    csrfToken: req.csrfToken(),
-  });
-});
+// My Recipes page Route
+const myRecipesRouter = require('./routes/myRecipes');
+app.use('/my-recipes', myRecipesRouter);
 
-// About Route
-app.get('/about', csrfProtection, (req, res) => {
-  res.render('about', {
-    title: 'About',
-    csrfToken: req.csrfToken(),
-  });
-});
+// Shopping List page Route
+const shoppingListRouter = require('./routes/shoppingList');
+app.use('/shopping-list', shoppingListRouter);
 
-// My Recipes Route
-app.get('/my-recipes', csrfProtection, (req, res) => {
-  res.render('my-recipes', {
-    title: 'My Recipes',
-    csrfToken: req.csrfToken(),
-  });
-});
+// Old routes are commented below
 
-// Shopping List Route
-app.get('/shopping-list', csrfProtection, (req, res) => {
-  res.render('shopping-list', {
-    title: 'Shopping List',
-    csrfToken: req.csrfToken(),
-  });
-});
+// app.get('/', csrfProtection, (req, res) => {
+//   res.render('home-page', {
+//     title: 'Home',
+//     csrfToken: req.csrfToken(),
+//   });
+// });
+
+// // Home Route
+// app.get('/home-page', csrfProtection, (req, res) => {
+//   res.render('home-page', {
+//     title: 'Home',
+//     csrfToken: req.csrfToken(),
+//   });
+// });
+
+// // About Route
+// app.get('/about', csrfProtection, (req, res) => {
+//   res.render('about', {
+//     title: 'About',
+//     csrfToken: req.csrfToken(),
+//   });
+// });
+
+// // My Recipes Route
+// app.get('/my-recipes', csrfProtection, (req, res) => {
+//   res.render('my-recipes', {
+//     title: 'My Recipes',
+//     csrfToken: req.csrfToken(),
+//   });
+// });
+
+// // Shopping List Route
+// app.get('/shopping-list', csrfProtection, (req, res) => {
+//   res.render('shopping-list', {
+//     title: 'Shopping List',
+//     csrfToken: req.csrfToken(),
+//   });
+// });
 
 
 // 404 handler

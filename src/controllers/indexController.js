@@ -13,6 +13,7 @@
 
 // Import models if needed
 // const SomeModel = require('../models/SomeModel');
+const csrf = require('csurf');
 
 /**
  * GET /
@@ -23,10 +24,10 @@ exports.getHome = async (req, res, next) => {
     // Fetch any data needed for the home page
     // const data = await SomeModel.findAll();
 
-    res.render('index', {
+    res.render('home-page', {
       title: 'Home',
       // data: data,
-      csrfToken: req.csrfToken(),
+      // csrfToken: req.csrfToken(),
     });
   } catch (error) {
     next(error);
