@@ -40,10 +40,14 @@ addButton.addEventListener("click", function() {
 
 //
 // EH for clear shopping list button
-// FIX ME: clear button not clearing list, fix for next deliverable
 //
 document.getElementById("clear-list-button").addEventListener("click", function() {
 
-    alert("here");
-    shoppingList.textContent = "";
+    // Array of nodes to remove
+    let ingredientsToRemove = shoppingList.querySelectorAll(".ingredient");
+
+    // Iterate through ingredients, remove child if in shopping list
+    ingredientsToRemove.forEach(ingredient => {
+        shoppingList.removeChild(ingredient);
+    })
 })
