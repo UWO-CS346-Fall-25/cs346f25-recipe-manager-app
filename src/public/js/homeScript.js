@@ -1,8 +1,8 @@
 //
-// Adds event handler for clicking on create recipe button.
+// Adds event handler for submitting a recipe (clicking create-recipe-button).
 // FIX ME: Only says whether input is valid, does not populate a database... yet!
 //
-document.getElementById("create-recipe-button").addEventListener("click", function(){
+document.getElementById("new-recipe-form").addEventListener("submit", function(){
 
     // Make it so text areas do not clear when invalid values entered.
     event.preventDefault();
@@ -18,7 +18,7 @@ document.getElementById("create-recipe-button").addEventListener("click", functi
     if (validValues == true)
         alert("Recipe Added Successfully!");
     else
-        alert("Invalid Values Entered...");
+        alert("You must enter valid values for each.");
 });
 
 
