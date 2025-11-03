@@ -89,48 +89,6 @@ app.use('/my-recipes', myRecipesRouter);
 const shoppingListRouter = require('./routes/shoppingList');
 app.use('/shopping-list', shoppingListRouter);
 
-// Old routes are commented below
-
-// app.get('/', csrfProtection, (req, res) => {
-//   res.render('home-page', {
-//     title: 'Home',
-//     csrfToken: req.csrfToken(),
-//   });
-// });
-
-// // Home Route
-// app.get('/home-page', csrfProtection, (req, res) => {
-//   res.render('home-page', {
-//     title: 'Home',
-//     csrfToken: req.csrfToken(),
-//   });
-// });
-
-// // About Route
-// app.get('/about', csrfProtection, (req, res) => {
-//   res.render('about', {
-//     title: 'About',
-//     csrfToken: req.csrfToken(),
-//   });
-// });
-
-// // My Recipes Route
-// app.get('/my-recipes', csrfProtection, (req, res) => {
-//   res.render('my-recipes', {
-//     title: 'My Recipes',
-//     csrfToken: req.csrfToken(),
-//   });
-// });
-
-// // Shopping List Route
-// app.get('/shopping-list', csrfProtection, (req, res) => {
-//   res.render('shopping-list', {
-//     title: 'Shopping List',
-//     csrfToken: req.csrfToken(),
-//   });
-// });
-
-
 // 404 handler
 app.use((req, res) => {
   res.status(404).render('error', {

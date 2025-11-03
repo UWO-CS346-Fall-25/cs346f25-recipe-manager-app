@@ -1,5 +1,22 @@
 # Notes on current pages / features:
 
+I centered the tagline in the website to make it more uniform with the
+content itself. I also ensured that all inputs are associated with a label, as well as
+giving the form's submit button the attribute: type="submit".
+
+-Also updated the general styling to reflect a notebook look in the website.
+-Changed some of the coloring to make it less harsh to look at.
+-Added borders to certain elements to add more dimension to the page
+
+Note: my-recipes page is still not implemented, but it will be when the database is integrated as
+      the page relies heavily on it being present.
+
+Screenshots:
+![Screenshot of about page](about-page.png)
+![Screenshot of home page](home-page.png)
+
+# Week 8 features below!
+
 -home-page.ejs      Notifies user of valid or invalid values for a new recipe(name, ingredients or notes)
 
 -shopping-list.ejs  Allows user to add new items to the list, although db will be required for 

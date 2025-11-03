@@ -25,21 +25,21 @@
                 </div>
                 <section id="add-recipe">
                     <h2>Try adding a recipe!</h2>
-                    <form>
+                    <form id="new-recipe-form">
                         <div class="prompt-input">
-                            <p class="input-label">Recipe Name:</p>
-                            <textarea id="recipe-name-input"></textarea>
+                            <label for="recipe-name-input">Recipe Name:</label>
+                            <textarea id="recipe-name-input" placeholder="ex: Choc' chip cookies" required></textarea>
                         </div>
 
                         <!-- The input method for ingredients may be subject to change -->
                         <div class="prompt-input">
-                            <p class="input-label">Ingredients:</p>
+                            <label for="ingredients-input">Ingredients:</label>
                             <textarea id="ingredients-input"></textarea>
                         </div>
 
                         <div class="prompt-input">
-                            <p class="input-label">Extra Notes:</p>
-                            <textarea id="notes-input"></textarea>
+                            <label for="notes-input">Extra Notes:</label>
+                            <textarea id="notes-input" placeholder="Remember to..."></textarea>
                         </div>
 
                         <button id="create-recipe-button">Create Recipe!</button>

@@ -58,8 +58,11 @@
                                 1 Can of Evaporated Milk
                             </li>
                             <li id="new-ingredient-container">
-                                <textarea id="new-ingredient"></textarea>
-                                <button id="add-ingredient-button">Add</button>
+                                <form>
+                                    <label for="new-ingredient">New Ingredient:</label>
+                                    <textarea id="new-ingredient" placeholder="New Ingredient" required></textarea>
+                                    <button id="add-ingredient-button" type="submit">Add</button>
+                                </form>
                             </li>
                             <li>
                                 <button id="clear-list-button">Clear?</button>
