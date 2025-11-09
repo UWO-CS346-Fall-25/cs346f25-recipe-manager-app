@@ -10,6 +10,7 @@
  */
 
 require('dotenv').config();
+require('dotenv').config();
 const express = require('express');
 const path = require('path');
 const helmet = require('helmet');
@@ -93,6 +94,8 @@ app.use('/shopping-list', shoppingListRouter);
 // Add Recipe Route
 const addRecipeRoute = require('./routes/addRecipe');
 app.use('/addRecipe', addRecipeRoute);
+
+
 
 // 404 handler
 app.use((req, res) => {

@@ -1,12 +1,8 @@
 // 
 // This file serves as a controller for AddRecipe
 // 
-
-require('dotenv').config();
-// Initialize Supabase client
-const { createClient } = require('@supabase/supabase-js');
-const supabase = createClient(process.env.SUPABASE_URL,
-                              process.env.SUPABASE_ANON_KEY);
+// Initialize supabase client
+const supabase = require('../public/js/supabaseClient');
 
 exports.addRecipe = async (req, res, next) => {
   try {
@@ -25,7 +21,8 @@ exports.addRecipe = async (req, res, next) => {
       // FIX ME: user_id is hardcoded!!!!
       .select();
 
-    if (error) throw error;
+    if (error) 
+      throw error;
 
     res.redirect('/');
     // Success!
