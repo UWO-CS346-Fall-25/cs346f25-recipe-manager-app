@@ -42,15 +42,15 @@ li {
 /* Layout */
 html {
   height: 100%;
-  
 }
 
 body {
   display: flex;
   flex-direction: column;
   width: 80vw;
-  height: 100vh;
+  height: 100%;
   margin: auto;
+  margin-bottom: 0;
   background-color: rgba(249, 253, 227, 0.958);
   background-image: linear-gradient(to bottom, gray 5%, transparent 10%, transparent 20%);
   background-size: 100% 30px;
@@ -99,8 +99,8 @@ nav a:hover {
 /* Main Content */
 #content {
   background-color: var(--secondary-color);
-  height: 100%;
   display: flex;
+  min-height:100vh;
   flex-direction: column;
   border-left: 3px black solid;
   border-right: 3px black solid;
@@ -203,10 +203,30 @@ main {
   padding: 10px 0;
 }
 
+#new-ingredient-quantity {
+  display: flex;
+  flex-direction: row;
+}
+
+#count-label {
+  display: block;
+}
+
+#count {
+  padding: 5px 0;
+  padding-left: 5px;
+  margin-bottom: 5px;
+}
+
 #new-ingredient {
   height: 30px;
   width: 100%;
   padding: 5px 0;
+  display: flex;
+}
+
+#new-ingredient-label {
+  display: flex;
 }
 
 #add-ingredient-button, #clear-list-button {

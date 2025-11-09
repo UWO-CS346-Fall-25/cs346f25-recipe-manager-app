@@ -24,9 +24,19 @@
                     <p>Where Managing Recipes is Easy!</p>
                 </div>
 
-            <!-- TO DO: IMPLEMENT PAGE LATER -->
+            
 
-            <p>PAGE TO BE IMPLEMENTED ALONGSIDE DB INTEGRATION</p>
+            <% if (recipes.length > 0) { %>
+                <ul>
+                    <% recipes.forEach(recipe => { %>
+                        <li><%= recipe.name %></li>
+                    <% }) %>
+                </ul>
+            <% } else { %>
+                <p>No Recipes Found for User.</p>
+            <% } %>
+
+            <!-- <p>PAGE TO BE MADE MORE USEFUL / INTERESTING!</p> -->
 
         </main>
         <footer>

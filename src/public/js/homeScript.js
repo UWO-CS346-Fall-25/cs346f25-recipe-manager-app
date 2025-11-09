@@ -15,8 +15,11 @@ document.getElementById("new-recipe-form").addEventListener("submit", function()
     let validValues = checkNewRecipeInputs([recipeBox, ingredientsBox, notesBox]);
 
     // If valid => Success!, else => Invalid values entered...
-    if (validValues == true)
+    if (validValues == true) {
+
+        document.getElementById('new-recipe-form').submit();
         alert("Recipe Added Successfully!");
+    }
     else
         alert("You must enter valid values for each.");
 });
