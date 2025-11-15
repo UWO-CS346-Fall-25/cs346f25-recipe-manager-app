@@ -75,6 +75,10 @@ app.use((req, res, next) => {
 // const indexRouter = require('./routes/index');
 // app.use('/', indexRouter);
 
+// Login page Route
+const loginRouter = require('./routes/login');
+app.use('/login', loginRouter);
+
 // Home page Route
 const homeRouter = require('./routes/home');
 app.use('/', homeRouter);

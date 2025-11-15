@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Re-Easy - <%= title %></title>
+        <link rel="stylesheet" href="/css/style.css">
+    </head>
+    <body>
+        <div id="content">
+            <header>
+                <nav>
+                    <ul id="login-signup-nav">
+                        <li><a id="current-page">Home</a></li>
+                        <li><a>About</a></li>
+                        <li><a>My Recipes</a></li>
+                        <li><a>Shopping List</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <main>
+                <div id="tagline">
+                    <h1>Re-Easy!</h1>
+                    <p>Where Managing Recipes is Easy!</p>
+                </div>
+                <section id="add-recipe">
+                    <h2 id="login-header">Login</h2>
+                    <form id="loginForm" action="/login" method="POST">
+
+                        <div class="prompt-input">
+                            <Label for="email-input" class="login-label">Email:</Label>
+                            <input name="email" id="email-input" placeholder="someone@example.com" required></input>
+                        </div>
+                        
+                        <div class="prompt-input">
+                            <Label for="password-input" class="login-label">Password:</Label>
+                            <input name="password" id="password-input" type="password" required></input>
+                        </div>
+
+                        <button type="submit" name="login-button" value="login" id="login-button">Login</button>
+                        <button type="submit" name="signup-button" value="signup" id="signup-button">Sign Up</button>
+                    </form>
+                </section>
+            </main>
+            <footer>
+                <p>
+                    Note: This website is being developed for a class project and in no way should be
+                    considered representative of any organization.
+                </p>
+            </footer>
+        </div>
+    </body>
+</html>
