@@ -194,6 +194,16 @@ main {
   background-color: #167dbc;
 }
 
+#signup-link {
+  color: black;
+  text-decoration: none;
+}
+
+#signup-link:hover {
+  color: blue;
+  text-decoration: underline;
+}
+
 .prompt-input {
   margin: 20px 0;
 }
