@@ -82,9 +82,11 @@ const authChecker = require('./public/js/checkAuth');
 const loginRouter = require('./routes/login');
 app.use('/login', loginRouter);
 
-// Signup page Route
+// Signup page Routes
 const signupRouter = require('./routes/signup');
 app.use('/signup', signupRouter);
+
+
 
 // The following Routes are protected!
 // Home page Route
@@ -103,9 +105,10 @@ app.use('/my-recipes', authChecker, myRecipesRouter);
 const shoppingListRouter = require('./routes/shoppingList');
 app.use('/shopping-list', authChecker, shoppingListRouter);
 
+// The following routes are for functions and not rendering pages
 // Add Recipe Route
-const addRecipeRoute = require('./routes/addRecipe');
-app.use('/addRecipe', addRecipeRoute);
+const addRecipeRouter = require('./routes/addRecipe');
+app.use('/addRecipe', addRecipeRouter);
 
 
 

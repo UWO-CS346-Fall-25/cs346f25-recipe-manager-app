@@ -28,14 +28,21 @@
                     <form id="loginForm" action="/login" method="POST">
 
                         <div class="prompt-input">
-                            <Label for="email-input" class="login-label">Email:</Label>
-                            <input name="email" id="email-input" placeholder="someone@example.com" required>
+                            <Label for="email-input" class="login-label" value="<%= formData.email || '' %>" >Email:</Label>
+                            <input name="email" id="email-input" placeholder="someone@example.com" type="email" required>
                         </div>
                         
                         <div class="prompt-input">
                             <Label for="password-input" class="login-label">Password:</Label>
                             <input name="password" id="password-input" type="password" required>
                         </div>
+
+                        <!-- Display error message below password -->
+                        <% if (typeof error !== 'undefined' && error) { %>
+                            <div id="error-text">
+                                <%= error %>
+                            </div>
+                        <% } %>
 
                         <button type="submit" name="login-button" value="login" id="login-button">Login</button>
                         <a id="signup-link" href="/signup">Sign up?</a>

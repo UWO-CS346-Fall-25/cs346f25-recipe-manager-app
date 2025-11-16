@@ -25,22 +25,36 @@
                 </div>
                 <section id="add-recipe">
                     <h2 id="login-header">Sign Up!</h2>
-                    <form id="loginForm" action="/login" method="POST">
+                    <form id="loginForm" action="/signup" method="POST">
 
                         <div class="prompt-input">
                             <Label for="email-input" class="signup-label">Email:</Label>
-                            <input name="email" id="email-input" placeholder="someone@example.com" required>
+                            <input name="email" id="email-input" placeholder="someone@example.com" value="<%= formData ? formData.email : '' %>" type="email" required>
                         </div>
                         
                         <div class="prompt-input">
                             <Label for="password-input" class="signup-label">Password:</Label>
-                            <input name="password" id="password-input" type="password" required>
+                            <input name="password" minlength="10" id="password-input" value="<%= formData.email || '' %>" type="password" required>
                         </div>
 
                         <div class="prompt-input">
                             <Label for="confirm-password-input" class="signup-label">Confirm Password:</Label>
-                            <input name="confirm-password" id="password-input" type="password" required>
+                            <input name="confirmPassword" minlength="10" id="confirm-password-input" type="password" required>
                         </div>
+
+                        <!-- Display error message below confirm password -->
+                        <% if (typeof error !== 'undefined' && error) { %>
+                            <div id="error-text">
+                                <%= error %>
+                            </div>
+                        <% } %>
+
+                        <!-- Display success below confirm password -->
+                        <% if (typeof success !== 'undefined' && success) { %>
+                            <div id="success-text">
+                                <%= success %>
+                            </div>
+                        <% } %>
 
                         <button type="submit" name="signup-button" value="signup" id="signup-button">Sign Up</button>
                     </form>
