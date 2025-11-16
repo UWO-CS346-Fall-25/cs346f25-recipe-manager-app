@@ -11,10 +11,7 @@ exports.getMyRecipes = async (req, res, next) => {
     .from('recipes')
     .select()
     .eq('user_id', req.session.user.id);
-    // FIX ME: user_id is hardcoded
-
     
-
     if (error)
         throw error
 

@@ -3,7 +3,7 @@
 // 
 exports.getSignup = async (req, res, next) => {
   try {
-    // Fetch any data needed for the login page
+    // Fetch any data needed for the signup page
     // const data = await SomeModel.findAll();
 
     res.render('signup', {
