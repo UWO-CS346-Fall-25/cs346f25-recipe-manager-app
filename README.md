@@ -1,5 +1,33 @@
 # Notes on current pages / features:
 
+-Added the ability to create an account
+-Passwords and email must fit certain criteria
+-Can verify your account by clicking on email link
+-Able to log into app and view your personal recipes
+
+#### To Do Next:
+
+-Make it so sessions persist past site refreshing
+-Make page more responsive
+-Decorate myRecipes page, possibly add an image for each recipe
+-Make clicking on a recipe open an info page with recipe ingredients and steps
+
+# Week 10 features below!
+
+-Added a quantity box on the shoppingList page as requested
+-Adding recipes is now functional
+-Viewing names of your recipes now works too
+Note: the user is hardcoded as user_id = 2, temporarily but it will be dynamic
+
+##### Row-level-Security:
+I feel that one of the most beneficial uses for row-level security would be
+to only allow users to view recipes associated with their id. While it is implemented on
+the client side to only view those, it doesn't necessarily make it entirely secure yet. I feel
+this would definitely be a priority in the near future when I implement some level of RLS.
+
+
+# Week 9 features below!
+
 I centered the tagline in the website to make it more uniform with the
 content itself. I also ensured that all inputs are associated with a label, as well as
 giving the form's submit button the attribute: type="submit".

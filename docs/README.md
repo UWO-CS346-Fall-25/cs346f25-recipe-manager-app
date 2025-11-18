@@ -1,5 +1,19 @@
 # Notes on current pages / features:
 
+-Added the ability to create an account
+-Passwords and email must fit certain criteria
+-Can verify your account by clicking on email link
+-Able to log into app and view your personal recipes
+
+#### To Do Next:
+
+-Make it so sessions persist past site refreshing
+-Make page more responsive
+-Decorate myRecipes page, possibly add an image for each recipe
+-Make clicking on a recipe open an info page with recipe ingredients and steps
+
+# Week 10 features below!
+
 -Added a quantity box on the shoppingList page as requested
 -Adding recipes is now functional
 -Viewing names of your recipes now works too

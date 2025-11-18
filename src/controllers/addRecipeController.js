@@ -17,8 +17,7 @@ exports.addRecipe = async (req, res, next) => {
 
     const { data, error } = await supabase
       .from('recipes')
-      .insert([{ user_id: 2, name, ingredients: ingredientsArray, steps: stepsArray }])
-      // FIX ME: user_id is hardcoded!!!!
+      .insert([{ user_id: req.session.user.id, name, ingredients: ingredientsArray, steps: stepsArray }])
       .select();
 
     if (error) 

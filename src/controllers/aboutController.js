@@ -3,7 +3,7 @@
 // 
 exports.getAbout = async (req, res, next) => {
   try {
-    // Fetch any data needed for the home page
+    // Fetch any data needed for the about page
     // const data = await SomeModel.findAll();
 
     res.render('about', {

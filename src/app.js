@@ -75,25 +75,40 @@ app.use((req, res, next) => {
 // const indexRouter = require('./routes/index');
 // app.use('/', indexRouter);
 
+// Add this to every route that should require a login
+const authChecker = require('./public/js/checkAuth');
+
+// Login page Route
+const loginRouter = require('./routes/login');
+app.use('/login', loginRouter);
+
+// Signup page Routes
+const signupRouter = require('./routes/signup');
+app.use('/signup', signupRouter);
+
+
+
+// The following Routes are protected!
 // Home page Route
 const homeRouter = require('./routes/home');
-app.use('/', homeRouter);
+app.use('/', authChecker, homeRouter);
 
 // About page Route
 const aboutRouter = require('./routes/about');
-app.use('/about', aboutRouter);
+app.use('/about', authChecker, aboutRouter);
 
 // My Recipes page Route
 const myRecipesRouter = require('./routes/myRecipes');
-app.use('/my-recipes', myRecipesRouter);
+app.use('/my-recipes', authChecker, myRecipesRouter);
 
 // Shopping List page Route
 const shoppingListRouter = require('./routes/shoppingList');
-app.use('/shopping-list', shoppingListRouter);
+app.use('/shopping-list', authChecker, shoppingListRouter);
 
+// The following routes are for functions and not rendering pages
 // Add Recipe Route
-const addRecipeRoute = require('./routes/addRecipe');
-app.use('/addRecipe', addRecipeRoute);
+const addRecipeRouter = require('./routes/addRecipe');
+app.use('/addRecipe', addRecipeRouter);
 
 
 

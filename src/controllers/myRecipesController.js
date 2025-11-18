@@ -10,11 +10,8 @@ exports.getMyRecipes = async (req, res, next) => {
     const { data, error } = await supabase
     .from('recipes')
     .select()
-    .eq('user_id', 2);
-    // FIX ME: user_id is hardcoded
-
+    .eq('user_id', req.session.user.id);
     
-
     if (error)
         throw error
 
