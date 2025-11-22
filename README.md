@@ -1,5 +1,6 @@
 # Notes on current pages / features:
 
+-Added log out button / functionality
 -Added call to zen quotes api
 -Sessions now persist (i.e. can refresh without being logged out)
 -Fixed some issues with responsiveness, but work is still needed
