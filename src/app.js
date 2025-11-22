@@ -82,7 +82,7 @@ const authChecker = require('./public/js/checkAuth');
 const loginRouter = require('./routes/login');
 app.use('/login', loginRouter);
 
-// Signup page Routes
+// Signup page Route
 const signupRouter = require('./routes/signup');
 app.use('/signup', signupRouter);
 
@@ -110,6 +110,18 @@ app.use('/shopping-list', authChecker, shoppingListRouter);
 const addRecipeRouter = require('./routes/addRecipe');
 app.use('/addRecipe', addRecipeRouter);
 
+
+// Used to log out of the app
+app.get('/logout', (req, res) => {
+  req.session.destroy(err => { // Destroy session
+    if (err) {
+      console.error("Error logging out: ", err);
+      return res.status(500).send("Error logging out!");
+    }
+
+    res.redirect('/'); // Go to login page
+  })
+})
 
 
 // 404 handler

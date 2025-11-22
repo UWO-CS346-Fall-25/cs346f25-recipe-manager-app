@@ -1,8 +1,7 @@
 //
 // Adds event handler for submitting a recipe (clicking create-recipe-button).
-// FIX ME: Only says whether input is valid, does not populate a database... yet!
 //
-document.getElementById("new-recipe-form").addEventListener("submit", function(){
+document.getElementById("new-recipe-form").addEventListener("submit", function(event){
 
     // Make it so text areas do not clear when invalid values entered.
     event.preventDefault();
@@ -29,7 +28,7 @@ document.getElementById("new-recipe-form").addEventListener("submit", function()
 // Function that checks if inputs in list all have valid textContent
 // @return: true if valid, false if invalid
 //
-checkNewRecipeInputs = function (inputs) {
+function checkNewRecipeInputs(inputs) {
 
     for (let i = 0; i < inputs.length; i++) {
         if (inputs[i].value.length === 0)
@@ -37,3 +36,8 @@ checkNewRecipeInputs = function (inputs) {
     }
     return true;
 }
+
+document.getElementById('log-out-button').addEventListener('click', function(){
+
+    window.location.href = "/logout";
+})
