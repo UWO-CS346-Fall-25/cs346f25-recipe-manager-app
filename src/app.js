@@ -110,6 +110,10 @@ app.use('/shopping-list', authChecker, shoppingListRouter);
 const addRecipeRouter = require('./routes/addRecipe');
 app.use('/addRecipe', addRecipeRouter);
 
+// Get daily quote Route
+const getQuoteRouter = require('./routes/dailyQuote');
+app.use('/dailyQuote', getQuoteRouter);
+
 
 // Used to log out of the app
 app.get('/logout', (req, res) => {
