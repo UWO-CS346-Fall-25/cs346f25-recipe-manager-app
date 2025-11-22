@@ -218,6 +218,19 @@ main {
   background-color: rgb(220, 0, 0);
 }
 
+#quote-button {
+  font-size: 125%;
+  padding: 10px;
+  border: 2px solid black;
+  border-radius: 10%;
+  margin-left: auto;
+  background-color: rgb(241, 240, 240);
+}
+
+#quote-button:hover {
+  background-color: lightgray;
+}
+
 .prompt-input {
   margin: 20px 0;
 }
