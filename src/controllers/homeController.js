@@ -1,6 +1,9 @@
-// 
-// This file serves as a controller for home-page
-// 
+/**
+* Controller: homeController
+* Purpose: Renders the home page
+* Input: req.body.text (string)
+* Output: Render home page or shows an error page
+*/
 exports.getHome = async (req, res, next) => {
   try {
     // Fetch any data needed for the home page

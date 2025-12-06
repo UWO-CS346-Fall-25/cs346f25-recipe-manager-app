@@ -1,6 +1,10 @@
-//
-// This file serves as a controller for deleteShoppingList
-//
+/**
+* Controller: deleteShoppingListController
+* Purpose: Deletes the user's shopping list
+* Input: req.body.text (string)
+* Output: Deletes the shopping list or shows an error page
+*/
+
 // Initialize supabase client
 const supabase = require('../public/js/supabaseClient');
 

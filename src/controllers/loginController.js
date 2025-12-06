@@ -1,6 +1,9 @@
-// 
-// This file serves as a controller for the login route
-// 
+/**
+* Controller: loginController
+* Purpose: Renders the login page, and handles login logic
+* Input: req.body.text (string)
+* Output: Renders login and logs user in or shows an error page
+*/
 exports.getLogin = async (req, res, next) => {
   try {
     // Fetch any data needed for the login page

@@ -1,6 +1,9 @@
-// 
-// This file serves as a controller for about
-// 
+/**
+* Controller: aboutController
+* Purpose: Renders the about page
+* Input: req.body.text (string)
+* Output: Redirects to /about or shows an error page
+*/
 exports.getAbout = async (req, res, next) => {
   try {
 

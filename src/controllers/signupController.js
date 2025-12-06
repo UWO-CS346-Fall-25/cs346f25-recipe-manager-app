@@ -1,6 +1,9 @@
-// 
-// This file serves as a controller for the signup route
-// 
+/**
+* Controller: signupController
+* Purpose: Renders the signup page and handles signup logic
+* Input: req.body.text (string)
+* Output: Render signup and signs user up or shows an error page
+*/
 exports.getSignup = async (req, res, next) => {
   try {
 

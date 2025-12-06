@@ -1,6 +1,9 @@
-//
-// This file serves as a controller for getting a daily inspirational quote
-//
+/**
+* Controller: dailyQuoteController
+* Purpose: Gets a daily quote from Zen Quotes API
+* Input: req.body.text (string)
+* Output: Gets a quote or returns an error message
+*/
 
 exports.getDailyQuote = async (req, res) => {
     try {

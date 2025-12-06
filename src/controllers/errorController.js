@@ -1,6 +1,9 @@
-// 
-// This file serves as a controller for about
-// 
+/**
+* Controller: errorController
+* Purpose: Renders the error page
+* Input: req.body.text (string)
+* Output: Renders error page or shows an error page
+*/
 exports.getError = async (req, res, next) => {
   try {
 

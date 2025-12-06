@@ -1,6 +1,10 @@
-// 
-// This file serves as a controller for shopping-list
-// 
+/**
+* Controller: shoppingListController
+* Purpose: Renders the shopping list page
+* Input: req.body.text (string)
+* Output: Render shopping list page or shows an error page
+*/
+
 exports.getShoppingList = async (req, res, next) => {
   try {
     // Fetch any data needed for the shopping list page

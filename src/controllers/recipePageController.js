@@ -1,6 +1,9 @@
-//
-// This file serves as a controller for getRecipe
-//
+/**
+* Controller: recipePageController
+* Purpose: Renders the recipe page
+* Input: req.body.text (string)
+* Output: Renders recipe page or shows an error page
+*/
 
 // Initialize supabase
 const supabase = require('../public/js/supabaseClient');

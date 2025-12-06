@@ -1,6 +1,10 @@
-//
-// This file serves as a controller for AddIngredient
-//
+/**
+* Controller: addIngredientController
+* Purpose: Adds an ingredient to shopping list
+* Input: req.body.text (string)
+* Output: Adds ingredient to shopping list or shows an error page
+*/
+
 // Initialize supabase client
 const supabase = require('../public/js/supabaseClient');
 
