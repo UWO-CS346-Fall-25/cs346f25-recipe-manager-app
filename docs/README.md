@@ -1,19 +1,23 @@
 # Notes on current pages / features:
 
+-Updated DB schema to include a table for shopping lists (each user may have 1)
+-Shopping list page now reflects the data in that table
+-My recipes now has an improved ui with clickable buttons
+-Clicking on a recipe will now bring you to a page to view details
+-This page was designed to be easily printed so you can share with friends / family
+-Logout buttons now work from every page
+
+#### To Do Next:
+
+-Improve documentation and add error page to handle critical issues
+-Make page more responsive
+
+# Week 12 features below!
+
 -Added log out button / functionality
 -Added call to zen quotes api
 -Sessions now persist (i.e. can refresh without being logged out)
 -Fixed some issues with responsiveness, but work is still needed
-
-Note: Whether or not there is a deliverable next week, I am going to fix some of
-      the following TBD items.
-
-#### To Do Next:
-
--Find alternative to alert messages, or toastify (ran into issues)
--Make page more responsive
--Decorate myRecipes page, possibly add an image for each recipe
--Make clicking on a recipe open an info page with recipe ingredients and steps
 
 # Week 11 features below!
 

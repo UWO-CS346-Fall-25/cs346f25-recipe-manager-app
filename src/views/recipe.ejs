@@ -13,7 +13,7 @@
                 <ul>
                     <li><a href="/">Home</a></li>
                     <li><a href="/about">About</a></li>
-                    <li><a id="current-page">My Recipes</a></li>
+                    <li><a href="/my-recipes">My Recipes</a></li>
                     <li><a href="/shopping-list">Shopping List</a></li>
                 </ul>
             </nav>
@@ -24,20 +24,30 @@
                     <p>Where Managing Recipes is Easy!</p>
                 </div>
 
+            <h1 id="recipe-page-title"><%= title %></h1>
             
             <div id="recipe-container">
-                <% if (recipes.length > 0) { %>
-                    <ul id="recipes-list">
-                        <% recipes.forEach(recipe => { %>
-                            <a href="/recipe-page/<%= recipe.recipe_id %>">
-                                <li class="recipe"><%= recipe.name %></li>
-                            </a>
+                <section>
+                    <h2 class="recipe-header">Ingredients:</h2>
+
+                    <ul id="recipe-page-ingredients">
+                        <% ingredients.forEach(ingredient => { %>
+                            <li><%= ingredient %></li>
                         <% }) %>
                     </ul>
-                <% } else { %>
-                    <p id="no-recipe-text">No Recipes Found for User.</p>
-                <% } %>
+                </section>
+                <section>
+                    <h2 class="recipe-header">Steps:</h2>
+
+                    <ol id="steps-list">
+                        <% steps.forEach(step => { %>
+                            <li><%= step %></li>
+                        <% }) %>
+                    </ol>
+                </section>
             </div>
+            
+            <p id="pro-tip" class="bold">Pro tip: press Ctrl + p to print your recipe!</p>
 
         </main>
         <footer>
@@ -54,6 +64,6 @@
         </footer>
         </div>
         <script src="/js/quoteScript.js" type="module" defer></script>
-        <script src="/js/myRecipesScript.js" defer></script>
+        <script src="/js/recipeScript.js" defer></script>
     </body>
 </html>

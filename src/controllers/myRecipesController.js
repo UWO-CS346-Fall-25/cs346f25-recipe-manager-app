@@ -15,6 +15,7 @@ exports.getMyRecipes = async (req, res, next) => {
     if (error)
         throw error
 
+    req.session.recipes = data;
     // Load my-recipes with selected recipes passed to it
     res.render('my-recipes', {
     title: 'My Recipes',

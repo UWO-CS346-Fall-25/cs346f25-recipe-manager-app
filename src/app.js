@@ -105,10 +105,23 @@ app.use('/my-recipes', authChecker, myRecipesRouter);
 const shoppingListRouter = require('./routes/shoppingList');
 app.use('/shopping-list', authChecker, shoppingListRouter);
 
+// Recipe page route (for a specified recipe)
+const recipePageRouter = require('./routes/recipePage');
+app.use('/recipe-page', authChecker, recipePageRouter);
+
+
 // The following routes are for functions and not rendering pages
 // Add Recipe Route
 const addRecipeRouter = require('./routes/addRecipe');
 app.use('/addRecipe', addRecipeRouter);
+
+// Add Ingredient Route
+const addIngredientRouter = require('./routes/addIngredient');
+app.use('/addIngredient', addIngredientRouter);
+
+// Delete Shopping List Route
+const deleteShoppingListRouter = require('./routes/deleteShoppingList');
+app.use('/deleteShoppingList', deleteShoppingListRouter);
 
 // Get daily quote Route
 const getQuoteRouter = require('./routes/dailyQuote');
@@ -128,34 +141,6 @@ app.get('/logout', (req, res) => {
 })
 
 
-// 404 handler
-app.use((req, res) => {
-  res.status(404).render('error', {
-    title: 'Page Not Found',
-    message: 'The page you are looking for does not exist.',
-    error: { status: 404 },
-  });
-});
 
-// Error handler
-// eslint-disable-next-line no-unused-vars
-app.use((err, req, res, _next) => {
-  // Log error in development
-  if (process.env.NODE_ENV === 'development') {
-    console.error(err.stack);
-  }
-
-  // Set locals, only providing error details in development
-  res.locals.message = err.message;
-  res.locals.error = process.env.NODE_ENV === 'development' ? err : {};
-
-  // Render error page
-  res.status(err.status || 500);
-  res.render('error', {
-    title: 'Error',
-    message: err.message,
-    error: res.locals.error,
-  });
-});
 
 module.exports = app;

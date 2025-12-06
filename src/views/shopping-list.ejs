@@ -25,53 +25,39 @@
                 </div>
 
                 <div id="shopping-list-container">
-                    <!-- This is a sample to show what a shopping list would look like -->
                     <section id="shopping-list">
-                        <h2>Shopping List</h2>
+                        
                         <ul id="shopping-list-items">
-                            <li class="ingredient">
-                                <input type="checkbox">
-                                1 Clove of Garlic
-                            </li>
-                            <li class="ingredient">
-                                <input type="checkbox">
-                                4 Packets of Baker's Yeast
-                            </li>
-                            <li class="ingredient">
-                                <input type="checkbox">
-                                1 Bag of All-Purpose Flour
-                            </li>
-                            <li class="ingredient">
-                                <input type="checkbox">
-                                1 Carton of Large Eggs
-                            </li>
-                            <li class="ingredient">
-                                <input type="checkbox">
-                                1 Box of Baking Soda
-                            </li>
-                            <li class="ingredient">
-                                <input type="checkbox">
-                                1 Gallon of Milk
-                            </li>
-                            <li class="ingredient">
-                                <input type="checkbox">
-                                1 Can of Evaporated Milk
-                            </li>
+
+                            <!-- A list item for each ingredient in user's shopping list -->
+                            <% if (items.length > 0) {%>
+
+                                <% items.forEach(item => { %>
+                                    <li class="ingredient">
+                                        <input type="checkbox">
+                                        <%= item %>
+                                    </li>
+                                <% }) %> 
+
+                            <% } %>
+                            
                             <li id="new-ingredient-container">
-                                <form>
+                                <form action="/addIngredient" method="post">
                                     <div id="new-ingredient-quanity">
-                                        <label for="new-ingredient">New Ingredient:</label>
+                                        <label id="new-ingredient-label" for="new-ingredient">New Ingredient:</label>
                                         <textarea id="new-ingredient" placeholder="New Ingredient" name="newIngredient" required></textarea>
 
-                                        <label for="count" id="count-label">#</label>
+                                        <label for="count" id="count-label">Quantity:</label>
                                         <input type="number" id="count" name="count" min="1" max="10" step="1" required>
                                     </div>
 
-                                    <button id="add-ingredient-button" type="submit">Add</button>
+                                    <button id="add-ingredient-button" type="submit">Add Item</button>
                                 </form>
                             </li>
                             <li>
-                                <button id="clear-list-button">Clear?</button>
+                                <form action="/deleteShoppingList" method="post">
+                                    <button id="clear-list-button" type="submit">Delete List</button>
+                                </form>
                             </li>
                         </ul>
                     </section>
@@ -84,11 +70,15 @@
                     Note: This website is being developed for a class project and in no way should be
                     considered representative of any organization.
                 </p>
-                <button id="log-out-button">
+                <button id="quote-button">
+                    Daily Quote
+                </button>
+                <button id="log-out-button" title="Log out">
                     Log Out
                 </button>
             </footer>
         </div>
         <script src="./js/shoppingListScript.js" defer></script>
+        <script src="/js/quoteScript.js" type="module" defer></script>
     </body>
 </html>

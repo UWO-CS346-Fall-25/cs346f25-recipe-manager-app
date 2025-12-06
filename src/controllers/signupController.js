@@ -73,7 +73,7 @@ exports.signup = async (req, res) => {
     // Success
     return res.render("signup", {
         title: "Signup",
-        success: "Check your email to confirm signup!",
+        success: "Check the listed email's inbox",
         formData: {},
         error: null
     });
