@@ -464,3 +464,38 @@ footer {
     max-width: 70vw;
   }
 }
+
+/* Styling for smaller screen size */
+
+@media (max-width: 400px) { 
+
+  body {
+    width: 100vw;
+  }
+
+  footer {
+    flex-direction: column;
+  }
+
+  #quote-button {
+    margin: 0px;
+    display: inline;
+    font-size: 100%;
+  }
+
+  #log-out-button {
+    display: inline;
+  }
+
+  nav a {
+    height: 100%;
+  }
+
+  .question-section li {
+    margin-left: 25px;
+  }
+
+  .question-section p {
+    width: 85%;
+  }
+}
