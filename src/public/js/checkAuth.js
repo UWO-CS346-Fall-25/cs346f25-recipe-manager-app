@@ -1,11 +1,13 @@
 //
-// Check if current session is still valid
+// Middleware function to check if current session is still valid
 //
 
 module.exports = function checkAuth(req, res, next) {
+    console.log('checkAuth middleware invoked');
     if (req.session.user) {
         next();
     }
-    else
+    else {
         return res.redirect("login");
+    }
 };
