@@ -10,7 +10,8 @@ exports.getDailyQuote = async (req, res) => {
 
         // If error, throw error with error message
         if (!response.ok) {
-            throw new Error;
+            console.error(`[${new Date().toISOString()}] [DailyQuoteController] Failed to retrieve quote`);
+            res.status(500).render('error');
         }
 
         // Get the quote part of the response
@@ -24,6 +25,7 @@ exports.getDailyQuote = async (req, res) => {
     catch (error)
     {
         // Return the error message in a json object
+        console.error(`[${new Date().toISOString()}] [DailyQuoteController] [${error}]`);
         let problem = "Unable to get quote...";
         return res.json({ result: problem});
     }

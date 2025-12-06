@@ -21,15 +21,18 @@ exports.addRecipe = async (req, res, next) => {
       .insert([{ user_id: req.session.user.id, name, ingredients: ingredientsArray, steps: stepsArray }])
       .select();
 
-    if (error) 
-      throw error;
+    if (error) {
+      console.error(`[${new Date().toISOString()}] [AddRecipeController] Failed to add recipe`);
+      res.status(500).render('error');
+    }
+      
 
     console.log(`[${new Date().toISOString()}] [AddRecipeController] Recipe added successfully!`);
     res.redirect('/');
     // Success!
 
   } catch (error) {
-    console.error(error);
-    next(error);
+    console.error(`[${new Date().toISOString()}] [AboutController] [${error}]`);
+    res.status(500).render('error');
   }
 };

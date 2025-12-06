@@ -13,6 +13,7 @@ exports.getHome = async (req, res, next) => {
       // csrfToken: req.csrfToken(),
     });
   } catch (error) {
-    next(error);
+    console.error(`[${new Date().toISOString()}] [HomeController] Failed to render home page [${error}]`);
+    res.status(500).render('error');
   }
 };

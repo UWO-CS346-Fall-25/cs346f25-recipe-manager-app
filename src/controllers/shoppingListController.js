@@ -12,8 +12,10 @@ exports.getShoppingList = async (req, res, next) => {
     .select()
     .eq('id', req.session.user.id);
 
-    if (error)
-      throw error
+    if (error) {
+      console.error(`[${new Date().toISOString()}] [ShoppingListController] Failed to get shopping list[${error}]`);
+      res.status(500).render('error');
+    }
 
     console.log(`[${new Date().toISOString()}] [ShoppingListController] Rendering Shopping List Page`);
     res.render('shopping-list', {
@@ -22,7 +24,7 @@ exports.getShoppingList = async (req, res, next) => {
       // csrfToken: req.csrfToken(),
     });
   } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: 'Failed to fetch recipes' });
+    console.error(`[${new Date().toISOString()}] [ShoppingListController] Failed to render shopping list [${error}]`);
+    res.status(500).render('error');
   }
 };

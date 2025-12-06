@@ -14,7 +14,8 @@ exports.getLogin = async (req, res, next) => {
       // csrfToken: req.csrfToken(),
     });
   } catch (error) {
-    next(error);
+    console.error(`[${new Date().toISOString()}] [LoginController] Failed to render login page [${error}]`);
+    res.status(500).render('error');
   }
 };
 
@@ -35,6 +36,7 @@ exports.login = async (req, res, next) => {
 
         if (error) 
         {
+          console.error(`[${new Date().toISOString()}] [LoginController] Failed to login due to: [${error}]`);
             return res.render('login', {
                 title: "Login",
                 error: error.message,
@@ -51,6 +53,7 @@ exports.login = async (req, res, next) => {
     }
     catch (e)
     {
+      console.error(`[${new Date().toISOString()}] [LoginController] Error logging in [${error}]`);
         return res.render('login', {
             title: "Login",
             error: "Unexpected error logging in",

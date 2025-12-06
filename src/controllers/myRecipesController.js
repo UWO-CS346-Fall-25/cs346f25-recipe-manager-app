@@ -13,10 +13,12 @@ exports.getMyRecipes = async (req, res, next) => {
     .select()
     .eq('user_id', req.session.user.id);
     
-    if (error)
-        throw error
+    if (error) {
+      console.error(`[${new Date().toISOString()}] [MyRecipesController] Failed to get recipes [${error}]`);
+      res.status(500).render('error');
+    }
 
-    console.log(`[${new Date().toISOString()}] [AboutController] Successfully obtained recipes!`);
+    console.log(`[${new Date().toISOString()}] [MyRecipesController] Successfully obtained recipes!`);
     req.session.recipes = data;
     // Load my-recipes with selected recipes passed to it
     res.render('my-recipes', {
@@ -25,7 +27,7 @@ exports.getMyRecipes = async (req, res, next) => {
     // csrfToken: req.csrfToken(),
   });
   } catch (error) {
-      console.error(error);
-      res.status(500).json({ error: 'Failed to fetch recipes' });
+     console.error(`[${new Date().toISOString()}] [MyRecipesController] Failed to render my recipes page [${error}]`);
+    res.status(500).render('error');
   }
 };

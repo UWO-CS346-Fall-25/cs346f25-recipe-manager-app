@@ -109,6 +109,10 @@ app.use('/shopping-list', authChecker, shoppingListRouter);
 const recipePageRouter = require('./routes/recipePage');
 app.use('/recipe-page', authChecker, recipePageRouter);
 
+// Error page route
+const errorRouter = require('./routes/error');
+app.use('/error', authChecker, errorRouter);
+
 
 // The following routes are for functions and not rendering pages
 // Add Recipe Route

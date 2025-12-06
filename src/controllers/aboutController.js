@@ -3,16 +3,13 @@
 // 
 exports.getAbout = async (req, res, next) => {
   try {
-    // Fetch any data needed for the about page
-    // const data = await SomeModel.findAll();
 
-    console.log(`[${new Date().toISOString()}] [AboutController] Rendering About page`);
+    console.log(`[${new Date().toISOString()}] [AboutController] Rendering about page`);
     res.render('about', {
-      title: 'About',
-      // data: data,
-      // csrfToken: req.csrfToken(),
+      title: 'About'
     });
   } catch (error) {
-    next(error);
+    console.error(`[${new Date().toISOString()}] [AboutController] Failed to render about page`);
+    res.status(500).render('error');
   }
 };

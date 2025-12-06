@@ -10,7 +10,8 @@ exports.getSignup = async (req, res, next) => {
       formData: {}
     });
   } catch (error) {
-    next(error);
+    console.error(`[${new Date().toISOString()}] [SignupController] Failed to render signup page [${error}]`);
+    res.status(500).render('error');
   }
 };
 
@@ -61,6 +62,7 @@ exports.signup = async (req, res) => {
     // If supabase runs into an issue
     if (supabaseError)
     {
+        console.error(`[${new Date().toISOString()}] [SignupController] Supabase error signing up: [${error}]`);
         return res.render("signup", {
             title: "Signup",
             error: supabaseError.message,

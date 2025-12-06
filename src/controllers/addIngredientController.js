@@ -20,8 +20,8 @@ exports.addIngredient = async (req, res, next) => {
       .eq('id', userId);
 
     if (err) {
-      console.error(err);
-      return next(err);
+      console.error(`[${new Date().toISOString()}] [AddIngredientController] Failed checking supabase for shopping list`);
+      res.status(500).render('error');
     }
 
     if (!currentItems || currentItems.length === 0) {
@@ -42,7 +42,7 @@ exports.addIngredient = async (req, res, next) => {
     console.log(`[${new Date().toISOString()}] [AddIngredientController] Shopping list updated successfully!`);
     res.redirect('/shopping-list'); // go back to shopping list page
   } catch (error) {
-    console.error(error);
-    next(error);
+    console.error(`[${new Date().toISOString()}] [AddIngredientController] [${error}]`);
+    res.status(500).render('error');
   }
 };

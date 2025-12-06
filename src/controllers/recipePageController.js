@@ -12,8 +12,10 @@ exports.getRecipe = async (req, res, next) => {
         console.log(`[${new Date().toISOString()}] [RecipePageController] Getting Recipe...`);
         const recipe = req.session.recipes.find(r => r.recipe_id == id);
 
-        if (!recipe)
-            return res.status(404).send("Specified recipe not found...");
+        if (!recipe) {
+            console.error(`[${new Date().toISOString()}] [RecipePageController] Failed to find specified recipe [${error}]`);
+            res.status(404).render('error');
+        }  
 
         console.log(`[${new Date().toISOString()}] [RecipePageController] Rendering Recipe Page!`);
         // Pass the recipe to the rendered recipe page, as well as additional info
@@ -24,6 +26,7 @@ exports.getRecipe = async (req, res, next) => {
         });
     }
     catch (error) {
-        console.log(error);
+        console.error(`[${new Date().toISOString()}] [RecipePageController] Failed to render recipe page [${error}]`);
+        res.status(500).render('error');
     }
 }
