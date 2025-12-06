@@ -105,6 +105,11 @@ app.use('/my-recipes', authChecker, myRecipesRouter);
 const shoppingListRouter = require('./routes/shoppingList');
 app.use('/shopping-list', authChecker, shoppingListRouter);
 
+// Recipe page route (for a specified recipe)
+const recipePageRouter = require('./routes/recipePage');
+app.use('/recipe-page', authChecker, recipePageRouter);
+
+
 // The following routes are for functions and not rendering pages
 // Add Recipe Route
 const addRecipeRouter = require('./routes/addRecipe');
