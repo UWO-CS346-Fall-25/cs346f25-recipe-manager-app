@@ -6,6 +6,7 @@ exports.getLogin = async (req, res, next) => {
     // Fetch any data needed for the login page
     // const data = await SomeModel.findAll();
 
+    console.log(`[${new Date().toISOString()}] [LoginController] Rendering Login page`);
     res.render('login', {
       title: 'Login',
       formData: {}
@@ -26,6 +27,7 @@ exports.login = async (req, res, next) => {
     {
         const {email, password} = req.body;
 
+        console.log(`[${new Date().toISOString()}] [LoginController] Attempting to log in...`);
         const {data, error} = await supabase.auth.signInWithPassword({
             email,
             password
@@ -40,6 +42,7 @@ exports.login = async (req, res, next) => {
             });
         }
 
+        console.log(`[${new Date().toISOString()}] [LoginController] Login Successful!`);
         // Get user for session
         req.session.user = data.user;
 

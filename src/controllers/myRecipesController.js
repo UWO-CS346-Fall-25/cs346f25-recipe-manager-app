@@ -7,6 +7,7 @@ const supabase = require('../public/js/supabaseClient');
 exports.getMyRecipes = async (req, res, next) => {
   
   try {
+    console.log(`[${new Date().toISOString()}] [MyRecipesController] Getting Recipes...`);
     const { data, error } = await supabase
     .from('recipes')
     .select()
@@ -15,6 +16,7 @@ exports.getMyRecipes = async (req, res, next) => {
     if (error)
         throw error
 
+    console.log(`[${new Date().toISOString()}] [AboutController] Successfully obtained recipes!`);
     req.session.recipes = data;
     // Load my-recipes with selected recipes passed to it
     res.render('my-recipes', {

@@ -8,6 +8,7 @@ exports.deleteShoppingList = async (req, res, next) => {
     try {
         const userId = req.session.user.id;
 
+        console.log(`[${new Date().toISOString()}] [DeleteShoppingListController] Deleting shopping list...`);
         const { data, error } = await supabase
         .from('shopping_lists')
         .delete()
@@ -16,6 +17,7 @@ exports.deleteShoppingList = async (req, res, next) => {
         if (error)
             console.error(error);
 
+        console.log(`[${new Date().toISOString()}] [DeleteShoppingListController] Shopping list deleted!`);
         res.redirect('shopping-list');
     }
     catch (error) {

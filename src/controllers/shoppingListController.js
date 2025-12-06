@@ -6,6 +6,7 @@ exports.getShoppingList = async (req, res, next) => {
     // Fetch any data needed for the shopping list page
     const supabase = require('../public/js/supabaseClient');
 
+    console.log(`[${new Date().toISOString()}] [ShoppingListController] Getting shopping list...`);
     const { data, error } = await supabase
     .from('shopping_lists')
     .select()
@@ -14,6 +15,7 @@ exports.getShoppingList = async (req, res, next) => {
     if (error)
       throw error
 
+    console.log(`[${new Date().toISOString()}] [ShoppingListController] Rendering Shopping List Page`);
     res.render('shopping-list', {
       title: 'Shopping List',
       items: data.length > 0 ? data[0].items : [],

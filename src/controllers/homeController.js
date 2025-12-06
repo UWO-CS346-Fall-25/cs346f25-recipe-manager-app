@@ -6,6 +6,7 @@ exports.getHome = async (req, res, next) => {
     // Fetch any data needed for the home page
     // const data = await SomeModel.findAll();
 
+    console.log(`[${new Date().toISOString()}] [HomeController] Rendering Home page`);
     res.render('home-page', {
       title: 'Home',
       // data: data,

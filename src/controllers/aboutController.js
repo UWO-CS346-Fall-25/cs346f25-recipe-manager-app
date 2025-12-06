@@ -6,6 +6,7 @@ exports.getAbout = async (req, res, next) => {
     // Fetch any data needed for the about page
     // const data = await SomeModel.findAll();
 
+    console.log(`[${new Date().toISOString()}] [AboutController] Rendering About page`);
     res.render('about', {
       title: 'About',
       // data: data,

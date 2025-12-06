@@ -1,3 +1,7 @@
+//
+// This is the file that exports the supabase client, which is used by
+// controllers to make DB queries.
+//
 require('dotenv').config();
 const { createClient } = require('@supabase/supabase-js');
 

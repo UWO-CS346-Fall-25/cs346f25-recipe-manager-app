@@ -5,6 +5,7 @@
 exports.getDailyQuote = async (req, res) => {
     try {
         // Call the zenquotes api for a daily quote
+        console.log(`[${new Date().toISOString()}] [DailyQuoteController] Getting daily quote...`);
         const response = await fetch('https://zenquotes.io/api/today');
 
         // If error, throw error with error message
@@ -16,6 +17,7 @@ exports.getDailyQuote = async (req, res) => {
         const data = await response.json();
         const quote = `${data[0].q} — ${data[0].a}`;
 
+        console.log(`[${new Date().toISOString()}] [DailyQuoteController] Zen Quotes API call successful!`);
         // Return a json object with the quote
         return res.json({ result: quote });
     }

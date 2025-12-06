@@ -15,6 +15,7 @@ exports.addRecipe = async (req, res, next) => {
     const ingredientsArray = ingredients.split(',').map(i => i.trim());
     const stepsArray = steps.split(',').map(i => i.trim());
 
+    console.log(`[${new Date().toISOString()}] [AddRecipeController] Attempting to add recipe...`);
     const { data, error } = await supabase
       .from('recipes')
       .insert([{ user_id: req.session.user.id, name, ingredients: ingredientsArray, steps: stepsArray }])
@@ -23,6 +24,7 @@ exports.addRecipe = async (req, res, next) => {
     if (error) 
       throw error;
 
+    console.log(`[${new Date().toISOString()}] [AddRecipeController] Recipe added successfully!`);
     res.redirect('/');
     // Success!
 

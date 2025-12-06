@@ -1,9 +1,4 @@
 //
-// Adds event handler for logging out of session
-//
-//
-
-//
 // Make sure user actually wants to delete shopping list
 //
 document.getElementById("clear-list-button").addEventListener("click", function(e){

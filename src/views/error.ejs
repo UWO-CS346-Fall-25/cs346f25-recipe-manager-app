@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Re-Easy - <%= title %></title>
+        <link rel="stylesheet" href="/css/style.css">
+    </head>
+    <body>
+        <div id="content">
+            <header>
+                <nav>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/my-recipes">My Recipes</a></li>
+                        <li><a href="/shopping-list">Shopping List</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <main>
+                <div id="tagline">
+                    <h1>Re-Easy!</h1>
+                    <p>Where Managing Recipes is Easy!</p>
+                </div>
+
+                <h1>Error</h1>
+
+                <p>Something went wrong. Feel free to try again.</p>
+
+            </main>
+            <footer>
+                <p>
+                    Note: This website is being developed for a class project and in no way should be
+                    considered representative of any organization.
+                </p>
+                <button id="quote-button">
+                    Daily Quote
+                </button>
+                <button id="log-out-button" title="Log out">
+                    Log Out
+                </button>
+            </footer>
+        </div>
+        <script src="/js/quoteScript.js" type="module" defer></script>
+        <script src="/js/errorScript.js" defer></script>
+    </body>
+</html>
