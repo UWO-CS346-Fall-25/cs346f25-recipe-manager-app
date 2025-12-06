@@ -27,9 +27,9 @@
                 <div id="shopping-list-container">
                     <!-- This is a sample to show what a shopping list would look like -->
                     <section id="shopping-list">
-                        <h2>Shopping List</h2>
+                        
                         <ul id="shopping-list-items">
-                            <li class="ingredient">
+                            <!-- <li class="ingredient">
                                 <input type="checkbox">
                                 1 Clove of Garlic
                             </li>
@@ -56,22 +56,34 @@
                             <li class="ingredient">
                                 <input type="checkbox">
                                 1 Can of Evaporated Milk
-                            </li>
+                            </li> -->
+
+                            <% if (items.length > 0) {%>
+
+                                <% items.forEach(item => { %>
+                                    <li class="ingredient">
+                                        <input type="checkbox">
+                                        <%= item %>
+                                    </li>
+                                <% }) %> 
+
+                            <% } %>
+                            
                             <li id="new-ingredient-container">
                                 <form>
                                     <div id="new-ingredient-quanity">
-                                        <label for="new-ingredient">New Ingredient:</label>
+                                        <label id="new-ingredient-label" for="new-ingredient">New Ingredient:</label>
                                         <textarea id="new-ingredient" placeholder="New Ingredient" name="newIngredient" required></textarea>
 
-                                        <label for="count" id="count-label">#</label>
+                                        <label for="count" id="count-label">Quantity:</label>
                                         <input type="number" id="count" name="count" min="1" max="10" step="1" required>
                                     </div>
 
-                                    <button id="add-ingredient-button" type="submit">Add</button>
+                                    <button id="add-ingredient-button" type="submit">Add Item</button>
                                 </form>
                             </li>
                             <li>
-                                <button id="clear-list-button">Clear?</button>
+                                <button id="clear-list-button">Delete List</button>
                             </li>
                         </ul>
                     </section>

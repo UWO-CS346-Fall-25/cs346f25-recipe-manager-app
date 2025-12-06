@@ -25,16 +25,17 @@
                 </div>
 
             
-
-            <% if (recipes.length > 0) { %>
-                <ul>
-                    <% recipes.forEach(recipe => { %>
-                        <li><%= recipe.name %></li>
-                    <% }) %>
-                </ul>
-            <% } else { %>
-                <p>No Recipes Found for User.</p>
-            <% } %>
+            <div id="recipe-container">
+                <% if (recipes.length > 0) { %>
+                    <ul id="recipes-list">
+                        <% recipes.forEach(recipe => { %>
+                            <li class="recipe"><%= recipe.name %></li>
+                        <% }) %>
+                    </ul>
+                <% } else { %>
+                    <p id="no-recipe-text">No Recipes Found for User.</p>
+                <% } %>
+            </div>
 
             <!-- <p>PAGE TO BE MADE MORE USEFUL / INTERESTING!</p> -->
 
