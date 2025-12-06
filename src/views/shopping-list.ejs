@@ -25,39 +25,11 @@
                 </div>
 
                 <div id="shopping-list-container">
-                    <!-- This is a sample to show what a shopping list would look like -->
                     <section id="shopping-list">
                         
                         <ul id="shopping-list-items">
-                            <!-- <li class="ingredient">
-                                <input type="checkbox">
-                                1 Clove of Garlic
-                            </li>
-                            <li class="ingredient">
-                                <input type="checkbox">
-                                4 Packets of Baker's Yeast
-                            </li>
-                            <li class="ingredient">
-                                <input type="checkbox">
-                                1 Bag of All-Purpose Flour
-                            </li>
-                            <li class="ingredient">
-                                <input type="checkbox">
-                                1 Carton of Large Eggs
-                            </li>
-                            <li class="ingredient">
-                                <input type="checkbox">
-                                1 Box of Baking Soda
-                            </li>
-                            <li class="ingredient">
-                                <input type="checkbox">
-                                1 Gallon of Milk
-                            </li>
-                            <li class="ingredient">
-                                <input type="checkbox">
-                                1 Can of Evaporated Milk
-                            </li> -->
 
+                            <!-- A list item for each ingredient in user's shopping list -->
                             <% if (items.length > 0) {%>
 
                                 <% items.forEach(item => { %>
@@ -70,7 +42,7 @@
                             <% } %>
                             
                             <li id="new-ingredient-container">
-                                <form>
+                                <form action="/addIngredient" method="post">
                                     <div id="new-ingredient-quanity">
                                         <label id="new-ingredient-label" for="new-ingredient">New Ingredient:</label>
                                         <textarea id="new-ingredient" placeholder="New Ingredient" name="newIngredient" required></textarea>
@@ -83,7 +55,9 @@
                                 </form>
                             </li>
                             <li>
-                                <button id="clear-list-button">Delete List</button>
+                                <form action="/deleteShoppingList" method="post">
+                                    <button id="clear-list-button" type="submit">Delete List</button>
+                                </form>
                             </li>
                         </ul>
                     </section>

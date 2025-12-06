@@ -16,7 +16,7 @@ exports.getShoppingList = async (req, res, next) => {
 
     res.render('shopping-list', {
       title: 'Shopping List',
-      items: data,
+      items: data.length > 0 ? data[0].items : [],
       // csrfToken: req.csrfToken(),
     });
   } catch (error) {

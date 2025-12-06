@@ -110,6 +110,14 @@ app.use('/shopping-list', authChecker, shoppingListRouter);
 const addRecipeRouter = require('./routes/addRecipe');
 app.use('/addRecipe', addRecipeRouter);
 
+// Add Ingredient Route
+const addIngredientRouter = require('./routes/addIngredient');
+app.use('/addIngredient', addIngredientRouter);
+
+// Delete Shopping List Route
+const deleteShoppingListRouter = require('./routes/deleteShoppingList');
+app.use('/deleteShoppingList', deleteShoppingListRouter);
+
 // Get daily quote Route
 const getQuoteRouter = require('./routes/dailyQuote');
 app.use('/dailyQuote', getQuoteRouter);

@@ -26,8 +26,6 @@ exports.addRecipe = async (req, res, next) => {
     res.redirect('/');
     // Success!
 
-    // res.status(201).json({ message: 'Recipe added successfully!', recipe: data[0] });
-    // For debugging!
   } catch (error) {
     console.error(error);
     next(error);
