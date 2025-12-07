@@ -1,11 +1,15 @@
-// 
-// This file serves as a controller for the login route
-// 
+/**
+* Controller: loginController
+* Purpose: Renders the login page, and handles login logic
+* Input: req.body.text (string)
+* Output: Renders login and logs user in or shows an error page
+*/
 exports.getLogin = async (req, res, next) => {
   try {
     // Fetch any data needed for the login page
     // const data = await SomeModel.findAll();
 
+    console.log(`[${new Date().toISOString()}] [LoginController] Rendering Login page`);
     res.render('login', {
       title: 'Login',
       formData: {}
@@ -13,7 +17,8 @@ exports.getLogin = async (req, res, next) => {
       // csrfToken: req.csrfToken(),
     });
   } catch (error) {
-    next(error);
+    console.error(`[${new Date().toISOString()}] [LoginController] Failed to render login page [${error}]`);
+    res.status(500).render('error');
   }
 };
 
@@ -26,6 +31,7 @@ exports.login = async (req, res, next) => {
     {
         const {email, password} = req.body;
 
+        console.log(`[${new Date().toISOString()}] [LoginController] Attempting to log in...`);
         const {data, error} = await supabase.auth.signInWithPassword({
             email,
             password
@@ -33,6 +39,7 @@ exports.login = async (req, res, next) => {
 
         if (error) 
         {
+          console.error(`[${new Date().toISOString()}] [LoginController] Failed to login due to: [${error}]`);
             return res.render('login', {
                 title: "Login",
                 error: error.message,
@@ -40,6 +47,7 @@ exports.login = async (req, res, next) => {
             });
         }
 
+        console.log(`[${new Date().toISOString()}] [LoginController] Login Successful!`);
         // Get user for session
         req.session.user = data.user;
 
@@ -48,6 +56,7 @@ exports.login = async (req, res, next) => {
     }
     catch (e)
     {
+      console.error(`[${new Date().toISOString()}] [LoginController] Error logging in [${error}]`);
         return res.render('login', {
             title: "Login",
             error: "Unexpected error logging in",

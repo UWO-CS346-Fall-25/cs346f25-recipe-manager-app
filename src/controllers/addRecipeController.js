@@ -1,6 +1,10 @@
-// 
-// This file serves as a controller for AddRecipe
-// 
+/**
+* Controller: addRecipeController
+* Purpose: Adds recipe to database and my recipes page by extension
+* Input: req.body.text (string)
+* Output: Adds a recipe or shows an error page
+*/
+
 // Initialize supabase client
 const supabase = require('../public/js/supabaseClient');
 
@@ -15,19 +19,24 @@ exports.addRecipe = async (req, res, next) => {
     const ingredientsArray = ingredients.split(',').map(i => i.trim());
     const stepsArray = steps.split(',').map(i => i.trim());
 
+    console.log(`[${new Date().toISOString()}] [AddRecipeController] Attempting to add recipe...`);
     const { data, error } = await supabase
       .from('recipes')
       .insert([{ user_id: req.session.user.id, name, ingredients: ingredientsArray, steps: stepsArray }])
       .select();
 
-    if (error) 
-      throw error;
+    if (error) {
+      console.error(`[${new Date().toISOString()}] [AddRecipeController] Failed to add recipe`);
+      res.status(500).render('error');
+    }
+      
 
+    console.log(`[${new Date().toISOString()}] [AddRecipeController] Recipe added successfully!`);
     res.redirect('/');
     // Success!
 
   } catch (error) {
-    console.error(error);
-    next(error);
+    console.error(`[${new Date().toISOString()}] [AddRecipeController] [${error}]`);
+    res.status(500).render('error');
   }
 };

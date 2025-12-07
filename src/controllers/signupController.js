@@ -1,19 +1,20 @@
-// 
-// This file serves as a controller for the signup route
-// 
+/**
+* Controller: signupController
+* Purpose: Renders the signup page and handles signup logic
+* Input: req.body.text (string)
+* Output: Render signup and signs user up or shows an error page
+*/
 exports.getSignup = async (req, res, next) => {
   try {
-    // Fetch any data needed for the signup page
-    // const data = await SomeModel.findAll();
 
+    console.log(`[${new Date().toISOString()}] [SignupController] Rendering signup page`);
     res.render('signup', {
       title: 'Signup',
-      formData: {},
-      // data: data,
-      // csrfToken: req.csrfToken(),
+      formData: {}
     });
   } catch (error) {
-    next(error);
+    console.error(`[${new Date().toISOString()}] [SignupController] Failed to render signup page [${error}]`);
+    res.status(500).render('error');
   }
 };
 
@@ -22,6 +23,7 @@ const supabase = require('../public/js/supabaseClient');
 exports.signup = async (req, res) => {
     const {email, password, confirmPassword} = req.body;
 
+    console.log(`[${new Date().toISOString()}] [SignupController] Checking password requirements...`);
     // Confirm password must be the same as password
     if (password != confirmPassword)
     {
@@ -53,6 +55,7 @@ exports.signup = async (req, res) => {
         });
     }
 
+    console.log(`[${new Date().toISOString()}] [SignupController] Attempting signup...`);
     // Signup on supabase
     const { data, error: supabaseError} = await supabase.auth.signUp({
         email,
@@ -62,6 +65,7 @@ exports.signup = async (req, res) => {
     // If supabase runs into an issue
     if (supabaseError)
     {
+        console.error(`[${new Date().toISOString()}] [SignupController] Supabase error signing up: [${error}]`);
         return res.render("signup", {
             title: "Signup",
             error: supabaseError.message,
@@ -70,6 +74,7 @@ exports.signup = async (req, res) => {
         });
     }
 
+    console.log(`[${new Date().toISOString()}] [SignupController] Signup successful!`);
     // Success
     return res.render("signup", {
         title: "Signup",

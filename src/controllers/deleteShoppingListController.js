@@ -1,6 +1,10 @@
-//
-// This file serves as a controller for deleteShoppingList
-//
+/**
+* Controller: deleteShoppingListController
+* Purpose: Deletes the user's shopping list
+* Input: req.body.text (string)
+* Output: Deletes the shopping list or shows an error page
+*/
+
 // Initialize supabase client
 const supabase = require('../public/js/supabaseClient');
 
@@ -8,18 +12,22 @@ exports.deleteShoppingList = async (req, res, next) => {
     try {
         const userId = req.session.user.id;
 
+        console.log(`[${new Date().toISOString()}] [DeleteShoppingListController] Deleting shopping list...`);
         const { data, error } = await supabase
         .from('shopping_lists')
         .delete()
         .eq('id', userId);
 
-        if (error)
-            console.error(error);
+        if (error) {
+            console.error(`[${new Date().toISOString()}] [DeleteShoppingListController] Failed to delete shopping list [${error}]`);
+            res.status(500).render('error');
+        }
 
+        console.log(`[${new Date().toISOString()}] [DeleteShoppingListController] Shopping list deleted!`);
         res.redirect('shopping-list');
     }
     catch (error) {
-        console.error(error);
-        next(error);
+        console.error(`[${new Date().toISOString()}] [DeleteShoppingListController] Failed to delete shopping list [${error}]`);
+        res.status(500).render('error');
     }
 }
